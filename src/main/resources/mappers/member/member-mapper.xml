@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="MemberMapper">
+<insert id="insertMember">
+
+ INSERT INTO MEMBER_TBL VALUES(#{memberId},#{memberPw},#{memberName},#{memberAge},#{memberGender},#{memberEmail},#{memberPhone},#{memberAddress},#{memberHobby},DEFAULT,DEFAULT,DEFAULT)
+</insert> 
+ 
+ 
+<!--  셀렉트여도 카운터면 resultmap이 아닌 type으로 int를 줌 -->
+ <select id="checkMemberLogin" resultType="_int">
+ 	SELECT COUNT(*) FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+ 
+ </select>
+ 
+ </mapper>
