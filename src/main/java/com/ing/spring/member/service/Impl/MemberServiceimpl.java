@@ -26,9 +26,36 @@ public class MemberServiceimpl implements MemberSerivce{
 
 
 	@Override
-	public int checkMemberLogin(Member member) {
+	public Member checkMemberLogin(Member member) {
 		
-		int result = mStore.checkMemberLogin(session,member);
+		Member mOne = mStore.checkMemberLogin(session,member);
+		
+		return mOne;
+	}
+
+
+	@Override
+	public Member checkMEmberById(Member member) {
+		
+		Member mOne = mStore.checkMEmberById(session,member);
+		
+		return mOne;
+	}
+
+
+	@Override
+	public int modifyMember(Member member) {
+		
+		int result = mStore.modifyMember(session , member);
+		
+		return result;
+	}
+
+
+	@Override
+	public int deleteMeber(Member member) {
+		
+		int result = mStore.deleteMember(session,member);
 		
 		return result;
 	}
