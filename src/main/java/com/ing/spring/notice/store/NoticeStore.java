@@ -43,6 +43,16 @@ public interface NoticeStore {
 
 	int selectListCount(SqlSession session, Map<String, String> paramMap);
 
+		/**
+		 * 공지사항 번호로 조회
+		 * @param session
+		 * @param noticeNo
+		 * @return
+		 */
+	Notice selectNoticeByNo(SqlSession session, Integer noticeNo);
+
+		int updateNotice(SqlSession session, Notice notice);
+
 //	List<Notice> selectNoticeList(SqlSession session, int curruntPage);
 
 }

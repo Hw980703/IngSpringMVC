@@ -141,4 +141,24 @@ public class NoticeStoreLogic implements NoticeStore {
 		return result;
 	}
 
+
+	@Override
+	public Notice selectNoticeByNo(SqlSession session, Integer noticeNo) {
+
+		Notice noticeOne = session.selectOne("NoticeMapper.selectNoticeByNo",noticeNo);
+		
+		return noticeOne;
+	}
+
+	
+	/**
+	 * 공지사항 수정
+	 */
+	@Override
+	public int updateNotice(SqlSession session, Notice notice) {
+		
+		int result = session.update("NoticeMapper.updateNotice",notice);
+		return result;
+	}
+
 }

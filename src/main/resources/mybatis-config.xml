@@ -4,6 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
   
   <configuration>
+  <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
   <typeAliases>
   <typeAlias type="com.ing.spring.member.domain.Member" alias="Member"/>
   <typeAlias type="com.ing.spring.notice.domain.Notice" alias="Notice"/>

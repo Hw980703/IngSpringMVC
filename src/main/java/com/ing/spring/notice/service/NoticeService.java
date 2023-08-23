@@ -32,5 +32,21 @@ public interface NoticeService {
 	List<Notice> searchNoticeByKeyword(PageInfo pInfo, Map<String,String> paraMap);
 
 	int getListCount(Map<String, String> paramMap);
+	
+	/**
+	 * 공지사항 번호로 조회
+	 * @param noticeNo
+	 * @return
+	 */
+
+	Notice selectNoticeByNo(Integer noticeNo);
+
+	
+	/**
+	 * 공지사항 수정 , with 파일첨부
+	 * @param notice
+	 * @return
+	 */
+	int updateNotice(Notice notice);
 
 }
