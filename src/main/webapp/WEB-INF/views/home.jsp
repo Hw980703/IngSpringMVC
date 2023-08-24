@@ -19,7 +19,12 @@
 	</c:if>
 	<c:if test="${memberId ne null }">
 		${memberName}님 환영합니다. <a href="/member/logout.kh">로그아웃</a> <br>
-		<a href="/member/mypage.kh?memberId=${memberId}">마이페이지</a>
+		<form action="/member/mypage.kh" method="post">
+			<input type="hidden" name="memberId" value="${memberId }">
+			<input type="submit" value="마이페이지">
+		</form>
+		
+<%-- 		<a href="/member/mypage.kh?memberId=${memberId}">마이페이지</a> --%>
 	</c:if>		
 		
 </body>

@@ -109,9 +109,12 @@ public class MemberController {
 			
 		}
 
-		@RequestMapping(value="/member/mypage.kh" , method=RequestMethod.GET)
+		@RequestMapping(value="/member/mypage.kh" , method=RequestMethod.POST)
 		public String memberMypage(@ModelAttribute Member member,Model model,HttpSession session) {
 				
+//			세션을 활용해서 멤버 아이디로 할것이라면 아래와같이 함
+			String memberId= (String)session.getAttribute("memberId");
+			
 			Member mOne = service.checkMEmberById(member);
 			
 			try {
