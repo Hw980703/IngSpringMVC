@@ -21,13 +21,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ing.spring.board.domain.Board;
 import com.ing.spring.board.domain.PageInfo;
+import com.ing.spring.board.domain.Reply;
 import com.ing.spring.board.service.BoardService;
+import com.ing.spring.board.service.ReplyService;
 
 @Controller
 public class BoardController {
 	
 	@Autowired
 	private BoardService service;
+	
+	@Autowired
+	private ReplyService rService;
 
 	@RequestMapping(value="/board/list.kh",method=RequestMethod.GET)
 	public ModelAndView showNoticeList(
@@ -140,6 +145,11 @@ public PageInfo getPageInfo(Integer currentPage , Integer totalCount) {
 		try {
 			
 			Board boardOne = service.selectBoardByNo(boardNo);
+			List<Reply> replyList = rService.selectReplyList(boardNo);
+			if (replyList.size() > 0) {
+				mv.addObject("rList",replyList);
+			}
+			
 			if(boardOne != null) {
 				mv.addObject("board", boardOne);
 				mv.setViewName("board/detail");

@@ -12,11 +12,13 @@
   <typeAlias type="com.ing.spring.member.domain.Member" alias="Member"/>
   <typeAlias type="com.ing.spring.notice.domain.Notice" alias="Notice"/>
   <typeAlias type="com.ing.spring.board.domain.Board" alias="Board"/>
+  <typeAlias type="com.ing.spring.board.domain.Reply" alias="Reply"/>
   </typeAliases>
   
   <mappers>
   	<mapper resource="mappers/member/member-mapper.xml"/>
   	<mapper resource="mappers/notice/notice-mapper.xml"/>
   	<mapper resource="mappers/board/board-mapper.xml"/>
+  	<mapper resource="mappers/reply/reply-mapper.xml"/>
   </mappers>
   </configuration>
